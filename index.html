@@ -13,10 +13,65 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
 </head>
 
 <body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Train Scheduler</h1>
+            <p class="lead">Know when your train arrives!</p>
+            <hr class="my-2">
+            </p>
+        </div>
 
+        <div class="card">
+            <div class="card-header">
+                Current Train Schedule
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <h6 class="card-title col-md-2 mx-auto">Train Name</h6>
+                    <h6 class="card-title col-md-2 mx-auto">Destination</h6>
+                    <h6 class="card-title col-md-2 mx-auto">Frequency(min)</h6>
+                    <h6 class="card-title col-md-2 mx-auto">Next Arrival</h6>
+                    <h6 class="card-title col-md-2 mx-auto">Minutes Away</h6>
+                </div>
+                <hr class="my-2">
+                <div id="new-user"></div>
+                <div class="row">
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <div class="card-header">
+                Add Train
+            </div>
+            <p class="lead"></p>
+            <form class="card-body">
+                <div class="form-group">
+                    <label for="formGroupExampleInput">Train Name</label>
+                    <input type="text" class="form-control" id="trainName" placeholder="Polar Express" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Destination</label>
+                    <input type="text" class="form-control" id="destination" placeholder="North Pole" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
+                    <input type="time" class="form-control" id="firstTrainTime" placeholder="00:00" required>
+                </div>
+                <div class="form-group">
+                    <label for="formGroupExampleInput2">Frequency (in minutes)</label>
+                    <input type="number" class="form-control" id="frequency" placeholder="15" required>
+                </div>
+                <button id="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
 
     <!-- Javascript -->
     <script src="./assets/javascript/script.js"></script>
