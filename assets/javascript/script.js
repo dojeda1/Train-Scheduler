@@ -15,7 +15,7 @@ $("#submit").on("click", function (event) {
 
     var trainName = $("#trainName").val().trim();
     var trainDestination = $("#destination").val().trim();
-    var trainTime = moment($("#firstTrainTime").val().trim(), "HHmm").format("HH:mm");
+    var trainTime = moment($("#firstTrainTime").val().trim(), "HHmm").format("X");
     var trainFrequency = $("#frequency").val().trim();
 
     console.log(trainName);
@@ -47,7 +47,52 @@ database.ref().on("child_added", function (snapshot) {
 
     // Store everything into a variable.
     var trainName = snapshot.val().name;
-    var trainDestination = snapshot.val().role;
-    var trainTime = snapshot.val().start;
-    var trainFrequency = snapshot.val().rate;
+    var trainDestination = snapshot.val().destination;
+    var trainTime = snapshot.val().time;
+    var trainFrequency = snapshot.val().frequency;
+
+    console.log("child added")
+    console.log(trainName);
+    console.log(trainDestination);
+    console.log(trainTime);
+    console.log(trainFrequency);
+
+    var trainTimeFormatted = moment.unix(trainTime).format("HH:mm");
+    console.log(trainTimeFormatted);
+
+    var nextArrival = "12:00"
+    var minutesAway = 15 + " min"
+
+    var newRow = $("<div>");
+    newRow.addClass("row")
+
+    var newName = $("<p>").text(trainName);
+    var newDestination = $("<p>").text(trainDestination);
+    var newFrequency = $("<p>").text(trainFrequency);
+    var newArrival = $("<p>").text(nextArrival);
+    var newMinAway = $("<p>").text(minutesAway);
+
+    $(newName).addClass("card-title col-sm-2 mx-auto my-0")
+    $(newDestination).addClass("card-title col-sm-2 mx-auto my-0")
+    $(newFrequency).addClass("card-title col-sm-2 mx-auto my-0")
+    $(newArrival).addClass("card-title col-sm-2 mx-auto my-0")
+    $(newMinAway).addClass("card-title col-sm-2 mx-auto my-0")
+
+    newRow.append(
+        newName,
+        newDestination,
+        newFrequency,
+        newArrival,
+        newMinAway,
+
+    );
+
+    var breakLine = $("<hr class='my-2'>")
+
+    // Append the new row to the table
+    $("#new-train").append(newRow);
+    $("#new-train").append(breakLine);
+
+
+
 });
