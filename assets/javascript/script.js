@@ -23,4 +23,31 @@ $("#submit").on("click", function (event) {
     console.log(trainTime);
     console.log(trainFrequency);
 
+    var newTrain = {
+        name: trainName,
+        destination: trainDestination,
+        time: trainTime,
+        frequency: trainFrequency
+    };
+
+    database.ref().push(newTrain);
+
+    console.log("Train Added");
+
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#firstTrainTime").val("");
+    $("#frequency").val("");
+
+});
+
+database.ref().on("child_added", function (snapshot) {
+
+    console.log(snapshot.val());
+
+    // Store everything into a variable.
+    var trainName = snapshot.val().name;
+    var trainDestination = snapshot.val().role;
+    var trainTime = snapshot.val().start;
+    var trainFrequency = snapshot.val().rate;
 });
