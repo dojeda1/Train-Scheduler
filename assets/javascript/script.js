@@ -8,3 +8,19 @@ var config = {
     messagingSenderId: "787171998514"
 };
 firebase.initializeApp(config);
+var database = firebase.database();
+
+$("#submit").on("click", function (event) {
+    event.preventDefault();
+
+    var trainName = $("#trainName").val().trim();
+    var trainDestination = $("#destination").val().trim();
+    var trainTime = moment($("#firstTrainTime").val().trim(), "HHmm").format("HH:mm");
+    var trainFrequency = $("#frequency").val().trim();
+
+    console.log(trainName);
+    console.log(trainDestination);
+    console.log(trainTime);
+    console.log(trainFrequency);
+
+});
