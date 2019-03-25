@@ -8,26 +8,27 @@
     <title>Trains</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.9.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
 </head>
 
 <body>
     <div class="container">
-        <div class="jumbotron">
-            <h1 class="display-4">Train Scheduler</h1>
+        <div class="jumbotron bg-info text-white">
+            <h1 class="display-4">King's Cross Station</h1>
             <p class="lead">Know when your train arrives!</p>
-            <hr class="my-2">
+            <hr class="my-2 border-white">
             </p>
         </div>
 
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-info text-white">
                 Current Train Schedule
             </div>
             <div class="card-body">
@@ -45,28 +46,28 @@
         </div>
         <br>
         <div class="card">
-            <div class="card-header">
+            <div class="card-header bg-info text-white">
                 Add Train
             </div>
             <p class="lead"></p>
             <form class="card-body">
                 <div class="form-group">
-                    <label for="formGroupExampleInput">Train Name</label>
+                    <label for="trainName">Train Name</label>
                     <input type="text" class="form-control" id="trainName" placeholder="Polar Express" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Destination</label>
+                    <label for="destination">Destination</label>
                     <input type="text" class="form-control" id="destination" placeholder="North Pole" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">First Train Time (HH:mm - military time)</label>
+                    <label for="firstTime">First Train Time (HH:mm - military time)</label>
                     <input type="text" class="form-control" id="firstTrainTime" placeholder="00:00" required>
                 </div>
                 <div class="form-group">
-                    <label for="formGroupExampleInput2">Frequency (in minutes)</label>
+                    <label for="frequency">Frequency (in minutes)</label>
                     <input type="number" class="form-control" id="frequency" placeholder="15" required>
                 </div>
-                <button id="submit">Submit</button>
+                <button id="submit" class="btn btn-info">Submit</button>
             </form>
         </div>
 
