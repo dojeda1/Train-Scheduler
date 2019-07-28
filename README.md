@@ -6,6 +6,8 @@ This app displays a list of trains and their arrival times stored on Firebase. F
 
   **Visit Web App [Here!](https://dojeda1.github.io/Train-Scheduler/)**
 
+![Web App Image](./demo.png)
+
 ### Technologies used
 
 * HTML
